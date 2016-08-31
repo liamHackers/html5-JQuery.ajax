@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作业-Jquery</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/homework-JQuery.css">
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script src="js/homework-JQuery.js"></script>
+<body>
+<header>
+    <details>
+        <summary>要求:</summary>
+        <ul>
+            <li>表单元素使用html5元素</li>
+            <li>使用jQuery ajax 提交后台</li>
+            <li>ajax 返回数据前台,并把下面的表格填充,或者选项打勾</li>
+        </ul>
+    </details>
+</header>
+<article>
+    <div><span>学生档案填写</span></div>
+    <form action="#" method="post">
+        <table>
+            <tr>
+                <td>
+                    学号
+                </td>
+                <td>
+                    <input type="text" required id="stu_number_display" name="stu_number_display"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    学生姓名
+                </td>
+                <td>
+                    <input type="text" required id="stu_name_display" name="stu_name_display"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    性别
+                </td>
+                <td>
+                    <input type="radio" name="stu_sex_display" value="man"/>男<input type="radio" name="stu_sex_display"
+                                                                                    value="woman"/>女
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    手机号码
+                </td>
+                <td>
+                    <input type="tel" required id="stu_phone_display" name="stu_phone_display"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email
+                </td>
+                <td>
+                    <input type="email" required id="stu_email_display" name="stu_email_display"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    年龄
+                </td>
+                <td>
+                    <input type="number" min="0" max="120" required id="stu_age_display" name="stu_age_display"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    生日
+                </td>
+                <td>
+                    <input type="date" required min="1990-01-01" max="2000-12-31" id="stu_born_display"
+                           name="stu_born_display"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    班级
+                </td>
+                <td>
+                    <input list="class_list_display" required id="stu_class_display" name="stu_born_display"/>
+                    <datalist id="class_list_display">
+                        <option>外包131</option>
+                        <option>外包132</option>
+                        <option>外包141</option>
+                        <option>外包142</option>
+                        <option>外包151</option>
+                        <option>外包152</option>
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    爱好
+                </td>
+                <td>
+                    <input type="checkbox" id="undo_basketball_display" name="undo_habit_display" value="basketball"/>篮球<input
+                        type="checkbox"
+                        id="undo_football_display" name="undo_habit_display" value="football"/>足球<input
+                        type="checkbox" id="undo_badminton_display" name="undo_habit_display" value="badminton"/>羽毛球
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <input type="button" value="ajax提交" id="mybutton" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</article>
+
+<section>
+    <div><span>信息返回</span></div>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    学号
+                </td>
+                <td>
+                    <input type="text" required id="stu_number"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    学生姓名
+                </td>
+                <td>
+                    <input type="text" required id="stu_name"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    性别
+                </td>
+                <td>
+                    <input type="radio" name="stu_sex" value="man"/>男<input type="radio" name="stu_sex" value="woman"/>女
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    手机号码
+                </td>
+                <td>
+                    <input type="tel" required id="stu_phone"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email
+                </td>
+                <td>
+                    <input type="email" required id="stu_email"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    年龄
+                </td>
+                <td>
+                    <input type="number" min="0" max="120" required id="stu_age"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    生日
+                </td>
+                <td>
+                    <input type="date" required min="1990-01-01" max="2000-12-31" id="stu_born"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    班级
+                </td>
+                <td>
+                    <input list="class_list" required id="stu_class"/>
+                    <datalist id="class_list">
+                        <option>外包131</option>
+                        <option>外包132</option>
+                        <option>外包141</option>
+                        <option>外包142</option>
+                        <option>外包151</option>
+                        <option>外包152</option>
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    爱好
+                </td>
+                <td>
+                    <input type="checkbox" id="undo_basketball"/>篮球<input type="checkbox" id="undo_football"/>足球<input
+                        type="checkbox" id="undo_badminton"/>羽毛球
+                </td>
+            </tr>
+        </table>
+    </form>
+</section>
+</body>
+</html>
